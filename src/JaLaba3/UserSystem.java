@@ -24,7 +24,12 @@ public class UserSystem {
                     users.sort(new Comparator<User>() {////////////фикс
                         @Override
                         public int compare(User o1, User o2) {
-                            return o1.getPoint() - o2.getPoint();
+                            if(o1.getPoint()<o2.getPoint())
+                                return 1;
+                            else if(o1.getPoint()>o2.getPoint())
+                                return -1;
+                            else
+                                return 0;
                         }
                     });
                     for (User i: users){
