@@ -6,6 +6,8 @@ public class User {
     private String login;
     private String password;
     private int point;
+    private int price;
+    private boolean cheak = false;
     private Scanner in = new Scanner(System.in);
     public User(){
         name = "judge";
@@ -51,5 +53,21 @@ public class User {
 
     public int getPoint() {
         return point;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public boolean cheak() {
+        return cheak;
+    }
+
+    public void setCheak(boolean cheak){
+        this.cheak = cheak;
     }
 }

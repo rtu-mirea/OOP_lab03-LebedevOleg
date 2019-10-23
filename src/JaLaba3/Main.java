@@ -40,10 +40,12 @@ public class Main {
         while (n == false) {
             System.out.print("Login:");
             log = in.next();
+            System.out.print("Password:");
             pass = in.next();
             for (User i : users) {
-                if (log.compareTo(users.get(0).getLogin()) == 0 && pass.compareTo(users.get(0).getPassword()) == 0) {
-                    System.out.println("admin");
+                if (log.compareTo("admin") == 0 && pass.compareTo("1111") == 0) {
+                    Admin admin = new Admin();
+                    admin.main(users);
                     n = true;
                     break;
                 }

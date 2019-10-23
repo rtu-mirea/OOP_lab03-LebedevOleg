@@ -2,6 +2,7 @@ package JaLaba3;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserSystem {
@@ -48,10 +49,20 @@ public class UserSystem {
     }
     void form(User user){
         int n;
-        System.out.print("Введите колличество баллов, которое вам поставило жури:");
-        n = in.nextInt();
-        user.setPoint(n);
-        System.out.println("Заявка оставлена. Желаем удачи");
+        if(user.cheak() == false) {
+            try {
+                System.out.print("Введите колличество баллов, которое вам поставило жури:");
+                n = in.nextInt();
+                user.setPoint(n);
+                System.out.println("Заявка оставлена. Желаем удачи ");
+                user.setCheak(true);
+            } catch (InputMismatchException e) {
+                System.out.println("Кажется баллы вводятся числом, а не иными символами");
+                form(user);
+            }
+        }
+        else
+            System.out.println("Боюсь вы уже оставляли заявку");
     }
     void change(User user){
         boolean OK = true;
