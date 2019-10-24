@@ -49,14 +49,16 @@ public class UserSystem {
     }
     void form(User user){
         int n;
+        String temp;
         if(user.cheak() == false) {
             try {
                 System.out.print("Введите колличество баллов, которое вам поставило жури:");
-                n = in.nextInt();
+                temp = in.next();
+                n = Integer.parseInt(temp);
                 user.setPoint(n);
                 System.out.println("Заявка оставлена. Желаем удачи ");
                 user.setCheak(true);
-            } catch (InputMismatchException e) {
+            } catch (Exception e) {
                 System.out.println("Кажется баллы вводятся числом, а не иными символами");
                 form(user);
             }

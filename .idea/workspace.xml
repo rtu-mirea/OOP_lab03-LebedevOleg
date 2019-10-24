@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2a73d4fd-517b-47ce-92da-28c4f03e6c6b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JaLaba3/JaLaba3/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JaLaba3/JaLaba3/Admin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JaLaba3/JaLaba3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JaLaba3/JaLaba3/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JaLaba3/JaLaba3/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JaLaba3/JaLaba3/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JaLaba3/JaLaba3/UserSystem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JaLaba3/JaLaba3/UserSystem$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JaLaba3/JaLaba3/UserSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JaLaba3/JaLaba3/UserSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JaLaba3/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JaLaba3/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JaLaba3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JaLaba3/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JaLaba3/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JaLaba3/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JaLaba3/UserSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JaLaba3/UserSystem.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,17 +94,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/JaLaba3/Main.java</url>
-          <line>45</line>
+          <line>48</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/JaLaba3/Main.java</url>
-          <line>51</line>
+          <line>54</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/JaLaba3/Main.java</url>
-          <line>58</line>
+          <line>61</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

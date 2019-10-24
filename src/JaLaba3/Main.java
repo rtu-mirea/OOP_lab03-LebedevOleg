@@ -16,21 +16,24 @@ public class Main {
         users.add(admin);
         while (OK){
             System.out.println("1.Войти\n2.Зарегистрироваться\n3.Закрыть программу");
-            n = in.nextInt();
-            switch (n){
-                case 1:
-                    enter();
-                    break;
-                case 2:
-                    regist();
-                    for(User i : users)
-                        System.out.println(i.getLogin() + " " + i.getPassword());
-                    break;
-                case 3:
-                    OK = false;
-                    System.out.println("Спасибо за использование программы");
-                    break;
+            try {
+                n = Integer.parseInt(in.next());
+                switch (n) {
+                    case 1:
+                        enter();
+                        break;
+                    case 2:
+                        regist();
+                        for (User i : users)
+                            System.out.println(i.getLogin() + " " + i.getPassword());
+                        break;
+                    case 3:
+                        OK = false;
+                        System.out.println("Спасибо за использование программы");
+                        break;
+                }
             }
+            catch (Exception e){}
         }
     }
     static void enter(){
