@@ -4,14 +4,16 @@ package JaLaba3;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import static JaLaba3.Admin.*;
+
 
 public class Main {
-    static ArrayList<User> users = new ArrayList<>();
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
         boolean OK = true;
         int n;
+        ArrayList<User> users = Admin.getUsers();
         User admin = new User();
         users.add(admin);
         while (OK){
@@ -20,10 +22,10 @@ public class Main {
                 n = Integer.parseInt(in.next());
                 switch (n) {
                     case 1:
-                        enter();
+                        enter(users);
                         break;
                     case 2:
-                        regist();
+                        regist(users);
                         for (User i : users)
                             System.out.println(i.getLogin() + " " + i.getPassword());
                         break;
@@ -36,7 +38,7 @@ public class Main {
             catch (Exception e){}
         }
     }
-    static void enter(){
+    static void enter( ArrayList<User> users){
         boolean n=false;
         int k;
         String log, pass;
@@ -45,14 +47,14 @@ public class Main {
             log = in.next();
             System.out.print("Password:");
             pass = in.next();
+            if (log.compareTo("admin") == 0 && pass.compareTo("1111") == 0) {
+                Admin admin = new Admin();
+                admin.main();
+                n = true;
+                break;
+            }
             for (User i : users) {
-                if (log.compareTo("admin") == 0 && pass.compareTo("1111") == 0) {
-                    Admin admin = new Admin();
-                    admin.main(users);
-                    n = true;
-                    break;
-                }
-                else if (i.getLogin().compareTo(log) ==  0 && i.getPassword().compareTo(pass) == 0) {
+                 if (i.getLogin().compareTo(log) ==  0 && i.getPassword().compareTo(pass) == 0) {
                     UserSystem userSystem = new UserSystem();
                     userSystem.main(users,i);
                     n = true;
@@ -75,7 +77,7 @@ public class Main {
             }
         }
     }
-    static void regist(){
+    static void regist( ArrayList<User> users){
         String log="", pass = "",name = "";
         boolean n = true;
         System.out.println("Введите имя, логин и пароль для регистрации");
@@ -97,6 +99,6 @@ public class Main {
         }
         User user = new User(name,log,pass);
         users.add(user);
+        Admin.setUsers(users);
     }
-
 }

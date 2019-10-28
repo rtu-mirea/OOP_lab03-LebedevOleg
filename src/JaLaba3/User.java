@@ -5,7 +5,6 @@ public class User {
     private String name;
     private String login;
     private String password;
-    private int point;
     private int price;
     private boolean cheak = false;
     private Scanner in = new Scanner(System.in);
@@ -13,14 +12,12 @@ public class User {
         name = "judge";
         login = "admin";
         password = "1111";
-        point = -1000;
     }
 
     public User(String n,String l,String p){
         name = n;
         login = l;
         password = p;
-        point = 0;
     }
 
     public void setLogin(String login) {
@@ -35,10 +32,6 @@ public class User {
         this.password = password;
     }
 
-    public void setPoint(int point) {
-        this.point = point;
-    }
-
     public String getLogin() {
         return login;
     }
@@ -49,10 +42,6 @@ public class User {
 
     public String getPassword() {
         return password;
-    }
-
-    public int getPoint() {
-        return point;
     }
 
     public int getPrice() {
@@ -70,4 +59,5 @@ public class User {
     public void setCheak(boolean cheak){
         this.cheak = cheak;
     }
+
 }

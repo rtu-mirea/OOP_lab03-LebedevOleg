@@ -22,23 +22,24 @@ public class UserSystem {
                     change(user);
                     break;
                 case 3:
-                    users.sort(new Comparator<User>() {////////////фикс
+                    ArrayList<Project> projects =Admin.getProject();
+                    projects.sort(new Comparator<Project>() {
                         @Override
-                        public int compare(User o1, User o2) {
-                            if(o1.getPoint()<o2.getPoint())
+                        public int compare(Project o1, Project o2) {
+                            if (o1.getPoint() < o2.getPoint())
                                 return 1;
-                            else if(o1.getPoint()>o2.getPoint())
+                            else if (o1.getPoint() > o2.getPoint())
                                 return -1;
                             else
                                 return 0;
                         }
                     });
-                    for (User i: users){
-                        if(i.getLogin() == user.getLogin()){
-                            System.out.println("* Имя:" + i.getLogin() + " Баллы:"+ i.getPoint());
+                    for (Project i: projects){
+                        if(i.getUser().getLogin() == user.getLogin()){
+                            System.out.println("* Имя:" + i.getUser().getLogin() + " Баллы:"+ i.getPoint());
                         }
                         else
-                            System.out.println("Имя:" + i.getLogin() + " Баллы:"+ i.getPoint());
+                            System.out.println("Имя:" + i.getUser().getLogin() + " Баллы:"+ i.getPoint());
                     }
                     break;
                 case 4:
@@ -50,14 +51,20 @@ public class UserSystem {
     void form(User user){
         int n;
         String temp;
+        Project project = new Project();
+        ArrayList<Project> projects = Admin.getProject();
         if(user.cheak() == false) {
             try {
+                System.out.println("Введите название проекта.");
+                project.setName(in.next());
                 System.out.print("Введите колличество баллов, которое вам поставило жури:");
                 temp = in.next();
-                n = Integer.parseInt(temp);
-                user.setPoint(n);
+                project.setPoint(Integer.parseInt(temp));
                 System.out.println("Заявка оставлена. Желаем удачи ");
                 user.setCheak(true);
+                project.setUser(user);
+                projects.add(project);
+                Admin.setProject(projects);
             } catch (Exception e) {
                 System.out.println("Кажется баллы вводятся числом, а не иными символами");
                 form(user);
